@@ -2,7 +2,7 @@
 
 ## Prerequsisites
 
-First, configure the database, see the datashot_thick for instructions and the schema.
+First, configure the database, see the [DataShot Desktop Application project](https://github.com/MCZbase/DataShot_DesktopApp) for instructions and the schema.
 
 Install Glassfish 3.1.2.2+  (these are old instructions, works in Glassfish 4).  
 [Configure jdbc resource, jdbc connection pool, jms connection factory, jms destination.]
