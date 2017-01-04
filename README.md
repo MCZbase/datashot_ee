@@ -62,4 +62,12 @@ the ear file directly to glassfish in step 3.
 The path for the web application /ic/ is set in context-root in
 src/main/application/META-INF/application.xml in the datashot_ee project.
 
-You will need to set the database JDBC connection parameters in glassfish.
+### In glassfish
+
+You will need to set the database JDBC connection parameters in glassfish.  The JDBC resource is expected to have the JNDI name     
+mysql_localhost_lepidoptera (regardless of the actual DBMS), and you will need to set up a corresponding JDBC connection pool specifying 
+the jdbc driver, url (e.g. jdbc:mysql://localhost:3306/lepidoptera), user, password, serverName, databaseName, and port (in 
+JDBC Connection Pool Properties (Additional Properties).
+
+You will need to add the JMS topic: jms/InsectChatTopic and the corresponding JMS connection factory:   
+jms/InsectChatTopicFactory
