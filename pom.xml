@@ -1,21 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>datashot</groupId>
+  <groupId>edu.harvard.mcz</groupId>
   <artifactId>datashot-ear</artifactId>
-  <version>1.2.3-SNAPSHOT</version>
+  <version>1.2.3</version>
   <packaging>ear</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>    
   <dependencies>
   	<dependency>
-  		<groupId>datashot</groupId>
+  		<groupId>edu.harvard.mcz</groupId>
   		<artifactId>datashot_ejb</artifactId>
   		<version>${project.version}</version>
   		<type>ejb</type>
   	</dependency>
   	<dependency>
-  		<groupId>datashot</groupId>
+  		<groupId>edu.harvard.mcz</groupId>
   		<artifactId>datashot_web</artifactId>
   		<version>${project.version}</version>
   		<type>war</type>
@@ -42,12 +42,12 @@
         <packagingExcludes>**/xercesImpl-*.jar</packagingExcludes>
         <modules>
           <ejbModule>
-              <groupId>datashot</groupId>
+              <groupId>edu.harvard.mcz</groupId>
               <artifactId>datashot_ejb</artifactId>
               <bundleFileName>datashot_ejb.jar</bundleFileName>
           </ejbModule>
           <webModule>
-              <groupId>datashot</groupId>
+              <groupId>edu.harvard.mcz</groupId>
               <artifactId>datashot_web</artifactId>
               <bundleFileName>datashot_web.war</bundleFileName>
               <!--  this contextRoot seems to be ignored in favor of that specified in application.xml -->
