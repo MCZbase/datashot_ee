@@ -39,7 +39,7 @@ Build with Maven:
     mvn clean install
     (builds a jar artifact and puts it in your local maven repository)
     
-(2) datashot_war 
+(2) datashot_web
 
     mvn clean install
     (builds a war artifact and puts it in your local maven repository)
