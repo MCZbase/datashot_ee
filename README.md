@@ -1,3 +1,12 @@
+# Components
+
+This project: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1040877.svg)](https://doi.org/10.5281/zenodo.1040877)
+
+Web Module: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1040879.svg)](https://doi.org/10.5281/zenodo.1040879)
+
+EJB Module: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1040881.svg)](https://doi.org/10.5281/zenodo.1040881)
+
+
 # Instructions for building the Datashot web application.
 
 ## Prerequsisites
