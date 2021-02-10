@@ -76,7 +76,23 @@ src/main/application/META-INF/application.xml in the datashot_ee project.
 You will need to set the database JDBC connection parameters in glassfish.  The JDBC resource is expected to have the JNDI name     
 mysql_localhost_lepidoptera (regardless of the actual DBMS), and you will need to set up a corresponding JDBC connection pool specifying 
 the jdbc driver, url (e.g. jdbc:mysql://localhost:3306/lepidoptera), user, password, serverName, databaseName, and port (in 
-JDBC Connection Pool Properties (Additional Properties).
+JDBC Connection Pool Properties (Additional Properties), and an authorization realm.  Check your jdbc driver for appropriate driver class name and path.
 
 You will need to add the JMS topic: jms/InsectChatTopic and the corresponding JMS connection factory:   
 jms/InsectChatTopicFactory
+
+From the glassfish installation directory, where bin/asadmin is found, the following invocations of asadmin will add the relevant properties for a local development MySQL or MariaDB database:
+
+    bin/asadmin create-jdbc-connection-pool --driverclassname com.mysql.cj.jdbc.Driver --restype java.sql.Driver --property portNumber=3066:password={password}:user=LEPIDOPTERA:serverName=localhost:databaseName=lepidoptera:URL=\"jdbc:mysql://127.0.0.1:3306/lepidoptera\" mysql_lepidoptera_pool
+
+    bin/asadmin create-jdbc-resource --connectionpoolid mysql_lepidoptera_pool jdbc/mysql_localhost_lepidoptera
+
+    bin/asadmin create-jdbc-resource --connectionpoolid mysql_lepidoptera_pool mysql_localhost_lepidoptera
+
+    bin/asadmin create-auth-realm --classname com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm  --property "user-table=Users:group-table=Users:user-name-column=username:password-column=hash:group-name-column=role:datasource-jndi=mysql_localhost_lepidoptera:jaas-context=jdbcRealm:digest-algorithm=SHA1:digestrealm-password-enc-algorithm=SHA1" lepidoptera
+
+    bin/asadmin create-jms-resource --restype javax.jms.Topic --property Name=InsectChatTopic jms/InsectChatTopic
+
+    bin/asadmin create-jms-resource --restype javax.jms.ConnectionFactory --description "connection factory for insect chat" --property ClientId=ICTF jms/InsectChatTopicFactory
+
+
