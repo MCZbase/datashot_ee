@@ -13,7 +13,7 @@ EJB Module: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1040881.svg)](ht
 
 First, configure the database, see the [DataShot Desktop Application project](https://github.com/MCZbase/DataShot_DesktopApp) for instructions and the schema.
 
-Install Glassfish 3.1.2.2+  (these are old instructions, works in Glassfish 4).  
+Install Glassfish 3.1.2.2+  (these are old instructions, works in Glassfish 5.1).  
 [Configure jdbc resource, jdbc connection pool, jms connection factory, jms destination.]
 
 ## Component projects
